@@ -76,7 +76,7 @@
 <v:ctr name="Container" type="IDENTIFIABLE">
   <a:a name="DESC" value="EN: This container contains the configuration (parameters) of the Port driver"/>
   <a:a name="UUID" value="ECUC:7d602b71-9d3e-44aa-a88e-3650f9b30a5c"/>
-<!-- 1 -->
+<!-- BOOLEAN -->
   <v:var name="TestBoolean" type="BOOLEAN">
     <a:da name="TOOLTIP" value="Example tooltip"/>
     <a:a name="POSTBUILDVARIANTVALUE" value="true" />
@@ -106,7 +106,7 @@
     <a:da name="DEFAULT" value="false"/>
   </v:var>
   <!-- 1 -->
-  <!-- 1 -->
+  <!-- INTEGER -->
 <v:var name="TestInteger" type="INTEGER">
     <a:a name="POSTBUILDVARIANTVALUE" value="true" />
     <a:a name="LABEL" value="Test Integer"/>
@@ -138,7 +138,7 @@
       <a:tst expr="&lt;=50"/>
     </a:da>
 </v:var>
-<!-- 1 -->
+<!-- FLOAT -->
 <v:var name="TestFloat" type="FLOAT">
     <a:a name="POSTBUILDVARIANTVALUE" value="true" />
     <a:a name="LABEL" value="Test Float"/>
@@ -171,7 +171,7 @@
     </a:da>
         <a:da name="EDITABLE" type="XPath" expr="../TestInteger &lt; 30"/>
 </v:var>
-<!-- 1 -->
+<!-- STRING -->
 <v:var name="TestString" type="STRING">
     <a:a name="POSTBUILDVARIANTVALUE" value="true" />
     <a:a name="LABEL" value="Test String"/>
@@ -199,7 +199,7 @@
     <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
     <a:da name="DEFAULT" value="ThoNV"/>
 </v:var>
-<!-- 1 -->
+<!-- REFERENCE -->
 <v:ref name="TestREF" type="REFERENCE">
     <a:a name="POSTBUILDVARIANTVALUE" value="true" />
     <a:a name="LABEL" value="Test REF"/>
@@ -231,7 +231,7 @@
       expr="node:refvalid(.)"
       false="The configured node does not exist or may not be referenced."/>
 </v:ref>
-<!-- range -->
+<!-- range ENUMERATION -->
 <v:var name="GetRange" type="ENUMERATION">
     <a:a name="POSTBUILDVARIANTVALUE" value="true" />
     <a:a name="LABEL" value="Test Range"/>
@@ -333,7 +333,7 @@
         true="Core0_2"/>
     </a:da>
 </v:var>
-<!-- Edittable -->
+<!-- Editable -->
 <v:var name="GetEditable" type="ENUMERATION">
     <a:a name="POSTBUILDVARIANTVALUE" value="true" />
     <a:a name="LABEL" value="Test Editable"/>
