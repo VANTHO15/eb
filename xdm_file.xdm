@@ -1,0 +1,960 @@
+<?xml version='1.0'?>
+<datamodel version="7.0"
+          xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+          xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+          xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+          xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+
+  <d:ctr type="AUTOSAR" factory="autosar"
+        xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+        xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+        xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+        xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+        xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+        xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+
+      <d:lst type="TOP-LEVEL-PACKAGES">
+        <d:ctr name="HuLa" type="AR-PACKAGE">
+          <a:a name="UUID" value="ECUC:AUTOSAR"/>
+          <d:lst type="ELEMENTS">
+
+            <d:chc name="Gpio" type="AR-ELEMENT" value="MODULE-DEF">
+              <v:ctr type="MODULE-DEF">
+                <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                  <ad:ADMIN-DATA>
+                    <ad:DOC-REVISIONS>
+                      <ad:DOC-REVISION>
+                        <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                        <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                      </ad:DOC-REVISION>
+                    </ad:DOC-REVISIONS>
+                  </ad:ADMIN-DATA>
+                </a:a>
+                <a:a name="DESC" value="EN: Configuration of the Gpio module." />
+                <a:a name="LOWER-MULTIPLICITY" value="0" />
+                <a:a name="POSTBUILDVARIANTSUPPORT" value="true" />
+                <a:a name="RELEASE" value="asc:4.4.0" />
+                <a:a name="UPPER-MULTIPLICITY" value="*" />
+                <a:a name="UUID" value="ECUC:af42ec2b-ca6a-4adc-b0b9-59a3beba9258" />
+
+                <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                  <a:a name="DESC"
+                    value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="Link">VariantLinkTime</icc:v>
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="LABEL" value="Post Build Variant Used" />
+                  <a:a name="ORIGIN" value="EB" />
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:da name="DEFAULT" value="true" />
+                  <a:da name="READONLY" value="FALSE" />
+                  <a:da name="TOOLTIP"
+                    value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points." />
+                </v:var>
+                <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                  <a:a name="DESC"
+                    value="This parameter defines the configuration variant of the module." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="LABEL" value="Config Variant" />
+                  <a:da name="DEFAULT" value="VariantPostBuild" />
+                  <a:da name="RANGE">
+                    <a:v>VariantLinkTime</a:v>
+                    <a:v>VariantPostBuild</a:v>
+                    <a:v>VariantPreCompile</a:v>
+                  </a:da>
+                </v:var>
+
+<!-- BEGIN CODE  -->
+
+<v:ctr name="Container" type="IDENTIFIABLE">
+  <a:a name="DESC" value="EN: This container contains the configuration (parameters) of the Port driver"/>
+  <a:a name="UUID" value="ECUC:7d602b71-9d3e-44aa-a88e-3650f9b30a5c"/>
+<!-- 1 -->
+  <v:var name="TestBoolean" type="BOOLEAN">
+    <a:da name="TOOLTIP" value="Example tooltip"/>
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test boolean"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="false"/>
+  </v:var>
+  <!-- 1 -->
+  <!-- 1 -->
+<v:var name="TestInteger" type="INTEGER">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test Integer"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="1"/>
+    <a:da name="INVALID" type="Range">
+      <a:tst expr="&gt;=1"/>
+      <a:tst expr="&lt;=50"/>
+    </a:da>
+</v:var>
+<!-- 1 -->
+<v:var name="TestFloat" type="FLOAT">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test Float"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="0.5"/>
+    <a:da name="INVALID" type="Range">
+      <a:tst expr="&gt;=0.1"/>
+      <a:tst expr="&lt;=100"/>
+    </a:da>
+        <a:da name="EDITABLE" type="XPath" expr="../TestInteger &lt; 30"/>
+</v:var>
+<!-- 1 -->
+<v:var name="TestString" type="STRING">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test String"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="ThoNV"/>
+</v:var>
+<!-- 1 -->
+<v:ref name="TestREF" type="REFERENCE">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test REF"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="OPTIONAL" value="true"/>
+    <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/Lin/PortGeneral/TestEnable"/>
+    <a:da name="INVALID"
+      type="XPath"
+      expr="node:refvalid(.)"
+      false="The configured node does not exist or may not be referenced."/>
+</v:ref>
+<!-- range -->
+<v:var name="GetRange" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test Range"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="Core0" />
+    <a:da name="RANGE">
+      <a:v>Core0</a:v>
+      <a:v>Core1</a:v>
+      <a:v>Core2</a:v>
+    </a:da>
+</v:var>
+<!-- get from Resource -->
+<v:var name="GetvalueResource" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Get Value Resource"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="Tho_1"/>
+    <a:da name="RANGE" type="XPath"
+       expr="ecu:list('Gpio.GpioConfig.GpioTest1')" />
+</v:var>
+<!-- node:fallback lấy có điều kiện-->
+<v:var name="Getfallback" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test Lấy có điều kiện"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="Core0" />
+    <a:da name="RANGE" type="XPath">
+      <a:tst
+        expr="(node:fallback(../GetRange,'Core0') = 'Core0')"
+        true="Core0_0"/>
+      <a:tst
+        expr="(node:fallback(../GetRange,'Core0') = 'Core0')"
+        true="Core0_1"/>
+      <a:tst
+        expr="(node:fallback(../GetRange,'Core0') = 'Core0')"
+        true="Core0_2"/>
+    </a:da>
+</v:var>
+<!-- Edittable -->
+<v:var name="GetEditable" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test Editable"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="name" />
+    <a:da name="RANGE">
+      <a:v>name1</a:v>
+      <a:v>name2</a:v>
+    </a:da>
+    <a:da name="EDITABLE" type="XPath">
+      <a:tst
+        expr="(node:value(../GetRange) = 'Core0')" />
+    </a:da>
+</v:var>
+<!-- VISIBLE -->
+<v:var name="GetVISIBLE" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test VISIBLE"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="name" />
+    <a:da name="RANGE">
+      <a:v>name1</a:v>
+      <a:v>name2</a:v>
+    </a:da>
+    <a:da name="VISIBLE" type="XPath" expr="node:value(../TestBoolean) = 'true'">
+    </a:da>
+</v:var>
+<!-- READONLY -->
+<v:var name="GetREADONLY" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test READONLY"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="name" />
+    <a:da name="RANGE">
+      <a:v>name1</a:v>
+      <a:v>name2</a:v>
+    </a:da>
+    <a:da name="READONLY" type="XPath">
+      <a:tst
+        expr="(node:value(../GetRange) = 'Core0')" />
+    </a:da>
+</v:var>
+<!-- node:exists -->
+<v:var name="GetNodeExists" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test node:exists"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="name" />
+    <a:da name="RANGE">
+      <a:v>name1</a:v>
+      <a:v>name2</a:v>
+    </a:da>
+    <a:da name="READONLY" type="XPath">
+      <a:tst
+        expr="not( (node:exists(../GetRange)) )" />
+    </a:da>
+</v:var>
+<!-- TAB -->
+<v:var name="GetTAB" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test TAB"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="name" />
+    <a:da name="RANGE">
+      <a:v>name1</a:v>
+      <a:v>name2</a:v>
+    </a:da>
+    <a:da name="TAB" value="Tab Tho"/>
+</v:var>
+<!-- WIDTH -->
+<v:var name="GetWIDTH" type="ENUMERATION">
+    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+    <a:a name="LABEL" value="Test WIDTH"/>
+    <a:a name="DESC">
+    <a:v>
+            <![CDATA[EN:
+                <html>
+                    <p>Test Enable</p>
+                    <p>Check: Enable Test.</p>
+                    <p>UnCheck: Disable Test.</p>
+                    Note: Implementation Specific Parameter. <p/>
+                </html>
+            ]]>
+    </a:v>
+    </a:a>
+    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+        type="IMPLEMENTATIONCONFIGCLASS">
+        <icc:v vclass="Link">VariantLinkTime</icc:v>
+        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+    </a:a>
+    <a:a name="ORIGIN" value="HuLa"/>
+    <a:a name="SCOPE" value="LOCAL"/>
+    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    <a:da name="DEFAULT" value="name" />
+    <a:da name="RANGE">
+      <a:v>name1</a:v>
+      <a:v>name2</a:v>
+    </a:da>
+    <a:a name="WIDTH" value="10"/>
+</v:var>
+
+</v:ctr>   
+<!-- hết 1 ctr  -->
+
+  <!-- LAYOUT HORIZONTAL-VERTICAL -->
+<v:ctr name="ContainerLAYOUT" type="IDENTIFIABLE">
+  <a:a name="DESC" value="EN: This container contains the configuration (parameters) of the Port driver"/>
+  <a:a name="UUID" value="ECUC:7d602b71-9d3e-44aa-a88e-3650f9b30a5c"/>
+  <a:a name="LAYOUT" value="HORIZONTAL"/>
+
+  <v:var name="GetLAYOUT" type="ENUMERATION">
+      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+      <a:a name="LABEL" value="Test1"/>
+      <a:a name="DESC">
+      <a:v>
+              <![CDATA[EN:
+                  <html>
+                      <p>Test Enable</p>
+                      <p>Check: Enable Test.</p>
+                      <p>UnCheck: Disable Test.</p>
+                      Note: Implementation Specific Parameter. <p/>
+                  </html>
+              ]]>
+      </a:v>
+      </a:a>
+      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+          type="IMPLEMENTATIONCONFIGCLASS">
+          <icc:v vclass="Link">VariantLinkTime</icc:v>
+          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+      </a:a>
+      <a:a name="ORIGIN" value="HuLa"/>
+      <a:a name="SCOPE" value="LOCAL"/>
+      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+      <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+      <a:da name="DEFAULT" value="name" />
+      <a:da name="RANGE">
+        <a:v>name1</a:v>
+        <a:v>name2</a:v>
+      </a:da>
+  </v:var>
+
+  <v:var name="GetLAYOUT1" type="ENUMERATION">
+      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+      <a:a name="LABEL" value="Test2"/>
+      <a:a name="DESC">
+      <a:v>
+              <![CDATA[EN:
+                  <html>
+                      <p>Test Enable</p>
+                      <p>Check: Enable Test.</p>
+                      <p>UnCheck: Disable Test.</p>
+                      Note: Implementation Specific Parameter. <p/>
+                  </html>
+              ]]>
+      </a:v>
+      </a:a>
+      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+          type="IMPLEMENTATIONCONFIGCLASS">
+          <icc:v vclass="Link">VariantLinkTime</icc:v>
+          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+      </a:a>
+      <a:a name="ORIGIN" value="HuLa"/>
+      <a:a name="SCOPE" value="LOCAL"/>
+      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+      <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+      <a:da name="DEFAULT" value="name" />
+      <a:da name="RANGE">
+        <a:v>name1</a:v>
+        <a:v>name2</a:v>
+      </a:da>
+  </v:var>
+
+</v:ctr> 
+<!-- 1 -->
+<v:chc name="Choise" type="IDENTIFIABLE">
+            <a:a name="DESC">
+            <a:v>
+                    <![CDATA[EN:
+                        <html>
+                            <p>Test Enable</p>
+                            <p>Check: Enable Test.</p>
+                            <p>UnCheck: Disable Test.</p>
+                            Note: Implementation Specific Parameter. <p/>
+                        </html>
+                    ]]>
+            </a:v>
+            </a:a>
+            <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+            <a:da name="OPTIONAL" value="true"/>
+            <a:da name="TAB" value="TAB Choise"/>
+            <v:ctr name="Container1" type="IDENTIFIABLE">
+              <a:a name="DESC" value="EN: This container contains the configuration (parameters) of the Port driver"/>
+              <a:a name="UUID" value="ECUC:7d602b71-9d3e-44aa-a88e-3650f9b30a5c"/>
+                <v:var name="TestEnable3" type="BOOLEAN">
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:a name="LABEL" value="Test Enable"/>
+                  <a:a name="DESC">
+                  <a:v>
+                          <![CDATA[EN:
+                              <html>
+                                  <p>Test Enable</p>
+                                  <p>Check: Enable Test.</p>
+                                  <p>UnCheck: Disable Test.</p>
+                                  Note: Implementation Specific Parameter. <p/>
+                              </html>
+                          ]]>
+                  </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="Link">VariantLinkTime</icc:v>
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="HuLa"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+            </v:ctr>   
+            <v:ctr name="Container2" type="IDENTIFIABLE">
+              <a:a name="DESC" value="EN: This container contains the configuration (parameters) of the Port driver"/>
+              <a:a name="UUID" value="ECUC:7d602b71-9d3e-44aa-a88e-3650f9b30a5c"/>
+                <v:var name="TestEnable4" type="BOOLEAN">
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:a name="LABEL" value="Test Enable"/>
+                  <a:a name="DESC">
+                  <a:v>
+                          <![CDATA[EN:
+                              <html>
+                                  <p>Test Enable</p>
+                                  <p>Check: Enable Test.</p>
+                                  <p>UnCheck: Disable Test.</p>
+                                  Note: Implementation Specific Parameter. <p/>
+                              </html>
+                          ]]>
+                  </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="Link">VariantLinkTime</icc:v>
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="HuLa"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+            </v:ctr>   
+</v:chc>  
+<!-- 1-->
+<v:lst name="List_Not_type" type="">
+    <v:var name="TestEnable2" type="BOOLEAN">
+      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+      <a:a name="LABEL" value="Test Enable"/>
+      <a:a name="DESC">
+      <a:v>
+              <![CDATA[EN:
+                  <html>
+                      <p>Test Enable</p>
+                      <p>Check: Enable Test.</p>
+                      <p>UnCheck: Disable Test.</p>
+                      Note: Implementation Specific Parameter. <p/>
+                  </html>
+              ]]>
+      </a:v>
+      </a:a>
+      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+          type="IMPLEMENTATIONCONFIGCLASS">
+          <icc:v vclass="Link">VariantLinkTime</icc:v>
+          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+      </a:a>
+      <a:a name="ORIGIN" value="HuLa"/>
+      <a:a name="SCOPE" value="LOCAL"/>
+      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+      <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+      <a:da name="DEFAULT" value="false"/>
+    </v:var>
+    <!-- Chỉ duy nhất hoặc là var hoặc là ref  -->
+    <!-- <v:ref name="reference" type="REFERENCE">
+      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+      <a:a name="LABEL" value="Test Enable"/>
+      <a:a name="DESC">
+      <a:v>
+              <![CDATA[EN:
+                  <html>
+                      <p>Test Enable</p>
+                      <p>Check: Enable Test.</p>
+                      <p>UnCheck: Disable Test.</p>
+                      Note: Implementation Specific Parameter. <p/>
+                  </html>
+              ]]>
+      </a:v>
+      </a:a>
+      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+          type="IMPLEMENTATIONCONFIGCLASS">
+          <icc:v vclass="Link">VariantLinkTime</icc:v>
+          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+      </a:a>
+      <a:a name="ORIGIN" value="HuLa"/>
+      <a:a name="SCOPE" value="LOCAL"/>
+      <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+    </v:ref> -->
+</v:lst>  
+<!-- 1 -->
+<v:lst name="List_type_Map" type="MAP">
+    <a:da name = "MIN" value = "1"/>
+    <v:ctr name="List_Map" type="IDENTIFIABLE">
+      <a:a name="DESC" value="EN: This container contains the configuration (parameters) of the Port driver"/>
+      <a:a name="UUID" value="ECUC:7d602b71-9d3e-44aa-a88e-3650f9b30a5c"/>
+      <v:var name="TestEnable1" type="BOOLEAN">
+        <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+        <a:a name="LABEL" value="Test Enable"/>
+        <a:a name="DESC">
+        <a:v>
+                <![CDATA[EN:
+                    <html>
+                        <p>Test Enable</p>
+                        <p>Check: Enable Test.</p>
+                        <p>UnCheck: Disable Test.</p>
+                        Note: Implementation Specific Parameter. <p/>
+                    </html>
+                ]]>
+        </a:v>
+        </a:a>
+        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+            type="IMPLEMENTATIONCONFIGCLASS">
+            <icc:v vclass="Link">VariantLinkTime</icc:v>
+            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+        </a:a>
+        <a:a name="ORIGIN" value="HuLa"/>
+        <a:a name="SCOPE" value="LOCAL"/>
+        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+        <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+        <a:da name="DEFAULT" value="false"/>
+      </v:var>
+      <v:var name="TestEnable2" type="BOOLEAN">
+        <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+        <a:a name="LABEL" value="Test Enable"/>
+        <a:a name="DESC">
+        <a:v>
+                <![CDATA[EN:
+                    <html>
+                        <p>Test Enable</p>
+                        <p>Check: Enable Test.</p>
+                        <p>UnCheck: Disable Test.</p>
+                        Note: Implementation Specific Parameter. <p/>
+                    </html>
+                ]]>
+        </a:v>
+        </a:a>
+        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+            type="IMPLEMENTATIONCONFIGCLASS">
+            <icc:v vclass="Link">VariantLinkTime</icc:v>
+            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+        </a:a>
+        <a:a name="ORIGIN" value="HuLa"/>
+        <a:a name="SCOPE" value="LOCAL"/>
+        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+        <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+        <a:da name="DEFAULT" value="false"/>
+      </v:var>
+    </v:ctr>  
+</v:lst>
+<!-- END CODE  -->
+
+                <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                  <a:a name="DESC" value="EN: Hardware dependent settings for the watchdog driver&apos;s &quot;slow&quot; mode." />
+                  <a:a name="UUID" value="ECUC:d3f49799-6193-4525-8faf-ca70964875ea" />
+
+
+                  <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                    <a:a name="LABEL" value="Ar Release Major Version" />
+                    <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PublishedInformation">VariantLinkTime</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="HuLa" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:248813f2-237c-4e5a-b6f1-6f52ec50f7d9" />
+                    <a:da name="DEFAULT" value="4" />
+                    <a:da name="EDITABLE" value="true" />
+                  </v:var>
+
+
+                  <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                    <a:a name="LABEL" value="Ar Release Minor Version" />
+                    <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PublishedInformation">VariantLinkTime</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="HuLa" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:667906be-3546-4094-98e7-8b7aa0e22ef9" />
+                    <a:da name="DEFAULT" value="4" />
+                    <a:da name="EDITABLE" value="true" />
+                  </v:var>
+
+
+                  <v:var name="ArReleasePatchVersion" type="INTEGER_LABEL">
+                    <a:a name="LABEL" value="Ar Release Revision Version" />
+                    <a:a name="DESC" value="EN: Revision version number of AUTOSAR specification on which the appropriate implementation is based on." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PublishedInformation">VariantLinkTime</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="HuLa" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:b00dfa31-56c2-43c6-8b31-34ff2b9df898" />
+                    <a:da name="DEFAULT" value="0" />
+                    <a:da name="EDITABLE" value="true" />
+                  </v:var>
+
+
+                  <v:var name="ModuleId" type="INTEGER_LABEL">
+                    <a:a name="LABEL" value="Module Id" />
+                    <a:a name="DESC" value="EN: Specifies the configure module ID." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PublishedInformation">VariantLinkTime</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="HuLa" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:17365cde-81ac-490a-baa5-b2924222b7a9" />
+                    <a:da name="DEFAULT" value="255" />
+                    <a:da name="EDITABLE" value="true" />
+                  </v:var>
+                  <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                    <a:a name="LABEL" value="Sw Major Version" />
+                    <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PublishedInformation">VariantLinkTime</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="HuLa" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:6394d887-ad62-473f-9722-058c302b27e1" />
+                    <a:da name="DEFAULT" value="1" />
+                    <a:da name="EDITABLE" value="true" />
+                  </v:var>
+                  <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                    <a:a name="LABEL" value="Sw Minor Version" />
+                    <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PublishedInformation">VariantLinkTime</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="HuLa" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:ad5535d0-6583-4195-ac19-232a73c88043" />
+                    <a:da name="DEFAULT" value="0" />
+                    <a:da name="EDITABLE" value="true" />
+                  </v:var>
+                  <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                    <a:a name="LABEL" value="Sw Patch Version" />
+                    <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PublishedInformation">VariantLinkTime</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="HuLa" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:282c2d53-08c8-4154-a628-e1a83bfff6c3" />
+                    <a:da name="DEFAULT" value="0" />
+                    <a:da name="EDITABLE" value="true" />
+                  </v:var>
+                  <v:var name="VendorId" type="STRING">
+                    <a:a name="LABEL" value="Vendor Id" />
+                    <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PublishedInformation">VariantLinkTime</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                      <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="HuLa" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:84b6a12a-5b42-4dc0-8412-b6f7ddcdae68" />
+                    <a:da name="DEFAULT" value="168" />
+                    <a:da name="EDITABLE" value="true" />
+                  </v:var>
+                </v:ctr>
+                <!-- 1 -->
+                
+                <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Gpio"/>
+              </v:ctr>
+            </d:chc>
+          </d:lst>
+        </d:ctr>
+      </d:lst>
+  </d:ctr>
+</datamodel>
