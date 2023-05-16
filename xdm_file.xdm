@@ -369,40 +369,6 @@
         expr="(node:value(../GetRange) = 'Core0')" />
     </a:da>
 </v:var>
-<!-- VISIBLE -->
-<v:var name="GetVISIBLE" type="ENUMERATION">
-    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
-    <a:a name="LABEL" value="Test VISIBLE"/>
-    <a:a name="DESC">
-    <a:v>
-            <![CDATA[EN:
-                <html>
-                    <p>Test Enable</p>
-                    <p>Check: Enable Test.</p>
-                    <p>UnCheck: Disable Test.</p>
-                    Note: Implementation Specific Parameter. <p/>
-                </html>
-            ]]>
-    </a:v>
-    </a:a>
-    <a:a name="IMPLEMENTATIONCONFIGCLASS"
-        type="IMPLEMENTATIONCONFIGCLASS">
-        <icc:v vclass="Link">VariantLinkTime</icc:v>
-        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
-        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
-    </a:a>
-    <a:a name="ORIGIN" value="HuLa"/>
-    <a:a name="SCOPE" value="LOCAL"/>
-    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
-    <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
-    <a:da name="DEFAULT" value="name" />
-    <a:da name="RANGE">
-      <a:v>name1</a:v>
-      <a:v>name2</a:v>
-    </a:da>
-    <a:da name="VISIBLE" type="XPath" expr="node:value(../TestBoolean) = 'true'">
-    </a:da>
-</v:var>
 <!-- READONLY -->
 <v:var name="GetREADONLY" type="ENUMERATION">
     <a:a name="POSTBUILDVARIANTVALUE" value="true" />
@@ -812,6 +778,80 @@
         <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
         <a:da name="DEFAULT" value="false"/>
       </v:var>
+    </v:ctr>  
+</v:lst>
+<!-- list uniq không trùng nhau -->
+<v:lst name="List_uniq" type="MAP">
+    <a:da name = "MIN" value = "1"/>
+    <v:ctr name="List_uniq" type="IDENTIFIABLE">
+      <a:a name="DESC" value="EN: This container contains the configuration (parameters) of the Port driver"/>
+      <a:a name="UUID" value="ECUC:7d602b71-9d3e-44aa-a88e-3650f9b30a5c"/>
+      <v:var name="TestEnable1" type="BOOLEAN">
+        <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+        <a:a name="LABEL" value="Test Enable"/>
+        <a:a name="DESC">
+        <a:v>
+                <![CDATA[EN:
+                    <html>
+                        <p>Test Enable</p>
+                        <p>Check: Enable Test.</p>
+                        <p>UnCheck: Disable Test.</p>
+                        Note: Implementation Specific Parameter. <p/>
+                    </html>
+                ]]>
+        </a:v>
+        </a:a>
+        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+            type="IMPLEMENTATIONCONFIGCLASS">
+            <icc:v vclass="Link">VariantLinkTime</icc:v>
+            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+        </a:a>
+        <a:a name="ORIGIN" value="HuLa"/>
+        <a:a name="SCOPE" value="LOCAL"/>
+        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+        <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+        <a:da name="DEFAULT" value="false"/>
+      </v:var>
+
+      <v:var name="Getuniq" type="ENUMERATION">
+          <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+          <a:a name="LABEL" value="Test uniq"/>
+          <a:a name="DESC">
+          <a:v>
+                  <![CDATA[EN:
+                      <html>
+                          <p>Test Enable</p>
+                          <p>Check: Enable Test.</p>
+                          <p>UnCheck: Disable Test.</p>
+                          Note: Implementation Specific Parameter. <p/>
+                      </html>
+                  ]]>
+          </a:v>
+          </a:a>
+          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+              type="IMPLEMENTATIONCONFIGCLASS">
+              <icc:v vclass="Link">VariantLinkTime</icc:v>
+              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+          </a:a>
+          <a:a name="ORIGIN" value="HuLa"/>
+          <a:a name="SCOPE" value="LOCAL"/>
+          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+          <a:a name="UUID" value="ECUC:3321b716-d833-4768-a62d-d54dedf0e039"/>
+          <a:da name="INVALID" type="XPath">
+            <a:tst
+              expr="text:uniq(node:fallback(../../*/Getuniq,text:split('1 2 3')), node:fallback(., 0))"
+              false="Duplicated value" />
+          </a:da>
+          <a:da name="DEFAULT" value="Core0" />
+          <a:da name="RANGE">
+            <a:v>Core0</a:v>
+            <a:v>Core1</a:v>
+            <a:v>Core2</a:v>
+          </a:da>
+      </v:var>
+      
     </v:ctr>  
 </v:lst>
 <!-- END CODE  -->
