@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+ <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Port_HuLa_ModuleId"
+             name="Port_HuLa Module">
+
+    <module id="Port_HuLa"
+            label="Port"
+            mandatory="false"
+            allowMultiple="false"
+            description="Port BSW module"
+            copyright="Copyright 2023 ThoNV"
+            swVersionMajor="1"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor=""
+            specVersionMinor=""
+            specVersionPatch=""
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Port"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="CortexM4" derivate="HuLa"/>
+
+    </module>
+  </extension>
+
+
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Port_HuLa_ConfigId"
+             name="Port_HuLa Configuration">
+    <configuration moduleId="Port_HuLa">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Port.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/HuLa/Port"/>
+      </data>
+
+      <editor id="Port_HuLa_EditorId"
+              label="Default"
+              tooltip="Port BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/HuLa/Port"/>
+          <parameter name="title" value="Port"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+
+
+ <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+  <generator moduleId="Port_HuLa"
+               id="Port_HuLa"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+
+  <parameter name="variantAware" value="true"/>
+  <parameter name="cfgFilePath" value="output"/>
+  <parameter name="generateAllModules" value="false"/>
+  <parameter name="generateIntoOneFile" value="false"/>
+  <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+ </extension>
+
+
+
+ <extension point="dreisoft.tresos.generator.api.plugin.generator" id="Port_HuLa_NGGeneratorId">
+          <generator moduleId="Port_HuLa"
+                     class="dreisoft.tresos.generator.ng.api.NGGenerator"
+                     id="Port_HuLa_UniqueNGGeneratorId"
+                     modes="generate,generate_PC,generate_PB,verify"
+                     step="post">
+              <parameter name="buildfile" value="ant_generator.xml"/>
+           <parameter name="variantAware" value="true"/>
+          </generator>
+  </extension>
+
+
+
+
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Port_HuLa_GeneratorId"
+              name="Port_HuLa Generator">
+    <generator moduleId="Port_HuLa"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+    <parameter name="variantAware" value="true"/>
+      <parameter name="templates" mode="generate,verify" value="generate,generate_PC,generate_PB"/>
+    </generator>
+  </extension>
+
+
+
+
+
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/Port/toc.xml" primary="false"/>
+  </extension>
+</plugin>
+
